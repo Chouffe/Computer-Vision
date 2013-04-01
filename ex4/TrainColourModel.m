@@ -1,4 +1,6 @@
-function [mu, Sigma] = TrainColourModel(DirName, n)
+function [mu, Sigma] = TrainColourModel(DirName, n, m)
+    % m = 0: RGB
+    % m = 1: HSV
     ls = dir(strcat(DirName,'*.jpg'));
     
     datas = [];
@@ -9,6 +11,12 @@ function [mu, Sigma] = TrainColourModel(DirName, n)
             datas = [datas; rgb_data];
             size(datas);
         end
+    end
+    
+    if m > 0
+        % Use HSV colour model
+    	datas = rgb2hsv(datas);
+        datas = [cos(datas(:,1)), sin(datas(:,1)), datas(:,2:3)];
     end
     
     mu = sum(datas, 1)/size(datas,1);
