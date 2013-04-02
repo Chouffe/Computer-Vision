@@ -1,4 +1,4 @@
-function [mu, Sigma] = TrainColourModel(DirName, n, m)
+function [mu, Sigma] = TrainColourModel(DirName, p, n, m)
     % m = 0: RGB
     % m = 1: HSV
     ls = dir(strcat(DirName,'*.jpg'));
@@ -6,7 +6,7 @@ function [mu, Sigma] = TrainColourModel(DirName, n, m)
     datas = [];
     for i = 1:n
         if i < size(ls,1)
-            cim = GrabCenterPixels(ls(i).name, 0.2);
+            cim = GrabCenterPixels(ls(i).name, p);
             rgb_data = reshape(cim, [size(cim,1)*size(cim,2), 3]);
             datas = [datas; rgb_data];
             size(datas);
