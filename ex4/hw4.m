@@ -69,3 +69,34 @@ bim = SkinClassifier(bike, 0);
 imagesc(bim);
 colormap(gray);
 axis equal;
+
+%% Ex5
+
+student1 = imread('StudentImages/Student1.jpg');
+bim = SkinClassifier(student1, 1);
+[x, y] = FindBiggestComp(bim);
+minx = min(x);
+maxx = max(x);
+miny = min(y);
+maxy = max(y);
+
+fig3 = figure;
+imagesc(student1);
+axis equal;
+hold on
+rectangle('Position', [minx, miny, maxx-minx, maxy-miny], 'LineWidth', 4, 'EdgeColor', 'r');
+
+student2 = imread('StudentImages/Student2.jpg');
+bim = SkinClassifier(student2, 1);
+[x, y] = FindBiggestComp(bim);
+minx = min(x);
+maxx = max(x);
+miny = min(y);
+maxy = max(y);
+
+fig4 = figure;
+axis equal;
+imagesc(student2);
+hold on
+rectangle('Position', [minx, miny, maxx-minx, maxy-miny], 'LineWidth', 4, 'EdgeColor', 'r');
+
