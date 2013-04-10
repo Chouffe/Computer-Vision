@@ -1,4 +1,5 @@
 function bim = SkinClassifier(im, hsv)
+    % Skin Classifier returns the binary im of classified pixels
     % hsv = 0 => rgb
     % hsv = 1 => hsv
     
@@ -8,6 +9,7 @@ function bim = SkinClassifier(im, hsv)
         xs = rgb2hsv(xs);
         xs = [cos(xs(:,1)), sin(xs(:,1)), xs(:,2:3)];
     end
+
     lvals = GaussLikelihood(xs, mu, sig);
     prob = reshape(lvals, size(im,1), size(im,2), 1);
 
@@ -18,3 +20,5 @@ function bim = SkinClassifier(im, hsv)
     ratio = prob./prob_back;
     bim = zeros(size(ratio));
     bim(find(ratio > 1)) = 1;
+
+end
