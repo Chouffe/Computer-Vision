@@ -6,7 +6,7 @@ function w = PerceptronLearning(X, labs, d1)
     % w = ones(1, length(labs));
     w = w';
     eta = .0001;
-    T = 200;
+    T = 1000;
 
     for t=1:T
         for i=1:length(labs)

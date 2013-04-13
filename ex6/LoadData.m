@@ -1,6 +1,6 @@
 function [X, labs, w, h] = LoadData(DirName)
 
-    ls = dir(strcat(DirName,'*.png'));
+    ls = dir(strcat(DirName,'train*.png'));
 
     n = 1000;
     labs = zeros(1, n);

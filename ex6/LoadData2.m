@@ -1,11 +1,11 @@
-function [X, labs, w, h] = LoadData2(DirName, start, endd)
+function [X, labs, w, h] = LoadData2(DirName)
 
-    ls = dir(strcat(DirName,'*.png'));
+    ls = dir(strcat(DirName,'test*.png'));
 
     n = 1000;
     labs = zeros(1, n);
 
-    for i = start:endd
+    for i = 1:n
         if i < size(ls,1)
             im = imread(strcat(DirName, ls(i).name));
             if i == 1
