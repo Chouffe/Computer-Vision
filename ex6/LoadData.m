@@ -14,7 +14,7 @@ function [X, labs, w, h] = LoadData(DirName)
                 X = zeros(h * w, n);
             end
             str = ls(i).name;
-            expr = '([0-9]+).png';
+            expr = '([0-9]+)_([0-9]+).png';
             [t, m] = regexp(str, expr,'tokens','match');
             labs(i) = str2num(t{1}{1});
             % labs(1) = t{1}{1};
