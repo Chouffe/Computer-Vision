@@ -1,5 +1,5 @@
-function [X, w, h] = LoadData(DirName, n, ph, pw)
-    ls = dir(strcat(DirName,'*.jpg'));
+function [X, w, h] = LoadData(DirName, ext, n, ph, pw)
+    ls = dir(strcat(strcat(DirName,'*.'),ext));
     
     X = [];
     for i = 1:n
