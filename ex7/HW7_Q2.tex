@@ -1,0 +1,121 @@
+\documentclass[a4paper,11pt]{article}
+
+% --- Packages ---
+% Language
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+% Font
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+% Math
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage[amsmath,thmmarks]{ntheorem}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{float}
+%Commands
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\arabic{enumii})}
+
+\usepackage{algorithm2e}
+
+% --- Definitions ---
+% Counter
+\newcounter{behctr}
+% Math-German work
+\newtheorem{claim}[behctr]{Claim}
+\newtheorem{rmk}{Remark}
+%% Proof environment with a small square as a "qed" symbol
+\theoremstyle{nonumberplain}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+%\theoremheaderfont{\normalfont\slshape}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+\setlength\theorempostskipamount{0pt}
+\setlength\theorempreskipamount{5pt}
+% Math-commands
+\newcommand{\inv}{^{-1}}
+\newcommand{\vnorm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\set}[2]{\{\nonscript\,{#1}\mid{#2}\nonscript\,\}}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\di}{d}
+\DeclareMathOperator{\prio}{prio}
+\DeclareMathOperator{\Root}{root}
+\DeclareMathOperator{\rank}{rk}
+\DeclareMathOperator{\key}{key}
+\DeclareMathOperator{\vbl}{vbl}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\CH}{CH}
+\DeclareMathOperator{\Inv}{Inv}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator\nN{\mathbb{N}}
+\DeclareMathOperator\nZ{\mathbb{Z}}
+\DeclareMathOperator\nQ{\mathbb{Q}}
+\DeclareMathOperator\nR{\mathbb{R}}
+\DeclareMathOperator\nC{\mathbb{C}}
+\DeclareMathOperator\nH{\mathbb{H}}
+\DeclareMathOperator\nD{\mathbb{D}}
+\let\oldhat\hat
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}}
+\everymath{\displaystyle\everymath{}}
+
+% --- Layout ---
+\pagestyle{fancy}
+
+% Text
+\addtolength{\textwidth}{2cm}
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textheight}{1.5cm}
+\addtolength{\headheight}{2pt}
+\addtolength{\topmargin}{-0.5cm}
+\addtolength{\headsep}{-0.25cm}
+% Footer
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfootoffset{-4cm}
+\lfoot{}
+\cfoot{\thepage\ / \pageref{LastPage}}
+\rfoot{}
+\title{\textbf{DD2427 - Exercise Set 7\bigskip}}
+\author{Romain Pomier}
+\date{}
+
+
+% -----------------------
+% ///--- Document --- \\\
+% -----------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 2}
+
+We have defined :
+\begin{align*}
+C &= \frac{1}{n} . X_{c} . X_{c}'\\
+C_{1} &= \frac{1}{n} . X_{c}' . X_{c}
+\end{align*}
+
+Let $v$ be an eigenvector of $C_{1}$ with corresponding eigenvalue $\lambda$.\\
+Let $V_{1} = X_{c} * v$. We have :
+
+\begin{align*}
+C_{1} . v &= \frac{1}{n} X_{c}' . X_{c} * v\\
+\Leftrightarrow \lambda v &= \frac{1}{n} X_{c}' . v_{1}\\
+\Leftrightarrow \lambda X_{c} . v &= \frac{1}{n} X_{c} . X_{c}' . v_{1}\\
+\Leftrightarrow \lambda v_{1} &= C . v_{1}
+\end{align*}
+
+Then $v_{1}$ is an eigenvector of $C$ with corresponding eigenvalue $\lambda$.
+
+\end{document}
